@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functionality Test Suite">
+<test name="Mortgage_Statements">
+<parameter name="instance" value="Mortgage_Statements"/>
+<parameter name="browser" value="Chrome"/>
+<classes>
+<class name="com.DCE.Testcases.Mortgage_Statements"/>
+</classes>
+</test>
+</suite>

@@ -1,0 +1,22 @@
+AppUrl = 
+
+Chrome_Key = webdriver.chrome.driver
+Chrome_Path =./Drivers/chromedriver.exe
+
+IE_Key = webdriver.ie.driver
+IEDriver_Path =./Drivers/IEDriverServer.exe
+
+FF_Key = webdriver.gecko.driver
+FF_Path =./Drivers/geckodriver.exe
+
+ScreenshotsPath=F:
+
+PageLoadTime = 60
+ImplicityTime = 30
+
+Csv_file=./data/CSV_Utils
+
+browser= IE
+!--Firefox, IE, Chrome--
+
+BasePath=./target
