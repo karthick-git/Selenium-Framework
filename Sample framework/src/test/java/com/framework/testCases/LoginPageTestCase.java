@@ -29,7 +29,7 @@ public class LoginPageTestCase extends TestBase {
 	public LoginPageObjects loginPage;
 	public ExtentReports extent;
 	ExtentTest logger;
-	CsvUtils csv;
+	CsvUtils csvUtils;
 	public static String uname;
 	public static String pass;
 
@@ -40,15 +40,13 @@ public class LoginPageTestCase extends TestBase {
 		try {
 			// Excel sheet to be given//
 			ExcelUtils.setExcelFile(Pro.getProperty("Excel_File"), "Sheet1");
-			sTestCaseName = csv.csv_value(49, 1);
+			//sTestCaseName = csv.csv_value(49, 1);
 //				// From above method we get long test case name including package and class name etc. //			
 			// The below method will refine your test case name, exactly the name use have
 			// used //
 			sTestCaseName = ExcelUtils.getTestCaseName(this.toString());
 //				System.out.println("Test Scenario Name is "+sTestCaseName);
-			uname = CSV_Utils.csv_value(49, 3);
 			System.out.println(uname);
-			pass = CSV_Utils.csv_value(49, 4);
 			System.out.println(pass);
 			// Date
 			DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy HHmmss");
@@ -74,7 +72,7 @@ public class LoginPageTestCase extends TestBase {
 			// Fetching the Test Case row number from the Test Data Sheet
 			// Case name to get the TestCase row from the Test Data Excel sheet
 			//
-			iTestCaseRow = ExcelUtils.getRowContains(sTestCaseName, instance);
+			iTestCaseRow = ExcelUtils.getRowContains(sTestCaseName);
 
 			System.out.println("Row containing test Scenario in the sheet is " + iTestCaseRow);
 		} catch (Exception e) {

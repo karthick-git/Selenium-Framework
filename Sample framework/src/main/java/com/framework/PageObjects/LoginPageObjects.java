@@ -3,8 +3,6 @@ package com.framework.PageObjects;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -48,5 +46,9 @@ public class LoginPageObjects extends TestBase {
 		Log.info("Logged in successfully");
 		Assert.assertEquals(VerifyPageTitle(), "");
 
+	}
+	
+	public String VerifyPageTitle() {
+		return driver.getTitle();
 	}
 }

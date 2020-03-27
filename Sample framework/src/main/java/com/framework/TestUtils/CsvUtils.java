@@ -13,18 +13,16 @@ import com.framework.base.BaseClass;
 public class CsvUtils extends BaseClass{
 	public int row;
 	public int col;
-	public String username;
-	public String password;
-	public LoginPageObjects loginPage;
-	
-
+	public static String username;
+	public static String password;
+	static LoginPageObjects loginPageObjects;
 	public CsvUtils () throws IOException {
 		super();
 		
 	}
-	public void csv(String sTestCaseName) throws Exception{
+	public static void csv(String sTestCaseName) throws Exception{
 
-			  File file = new File(pro.getProperty("Csv_file"));
+			  File file = new File(pro.getProperty("csvFile"));
 		      FileInputStream fis = new FileInputStream(file);
 		      byte[] byteArray = new byte[(int)file.length()];
 		      fis.read(byteArray);
@@ -45,8 +43,8 @@ public class CsvUtils extends BaseClass{
 			    	  System.out.println("Username : "+ username);
 			    	  System.out.println("Password : "+ password);
 			    	  System.out.println(sTestCaseName);
-			    	  loginPage = new LoginPageObjects();
-			    	  loginPage.login(username,password,sTestCaseName);
+			    	  loginPageObjects = new LoginPageObjects();
+			    	  loginPageObjects.login(username, password, sTestCaseName);
 			      }
 		      }	  
 		      br.close();
