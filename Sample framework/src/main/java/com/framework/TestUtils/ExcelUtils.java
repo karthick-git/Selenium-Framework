@@ -136,7 +136,7 @@ public class ExcelUtils {
 		}
 	}
 
-	public static int getRowContains(String sTestCaseName, String InstanceName) throws Exception
+	public static int getRowContains(String sTestCaseName) throws Exception
 	{
 		int i;
 		try 
@@ -145,10 +145,7 @@ public class ExcelUtils {
 			for ( i=0 ; i<=rowCount; i++)
 			{
 				if(ExcelUtils.getCellData(i,0).equalsIgnoreCase(sTestCaseName))
-				{				
-					if(ExcelUtils.getCellData(i,1).equalsIgnoreCase(InstanceName))
 					break;
-				}
 			}
 			return i;
 				
